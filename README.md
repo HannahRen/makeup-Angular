@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project description
 
-This project is created to show makeup products and some users reviews. The frameworks used in this project are Angular5, bootstrap3, jQuery.
+This project is created to show makeup products and some users reviews. The frameworks used in this project are Angular5, bootstrap3, jQuery, Express.
 
 ## Development server
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product, ProductService } from '../shared/product.service';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-product',
@@ -8,11 +11,15 @@ import { Product, ProductService } from '../shared/product.service';
 })
 export class ProductComponent implements OnInit {
 
-  private products: Product[]
+  private products: Observable<Product[]>
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {
+  }
 
   ngOnInit() {
     this.products = this.productService.getProducts()
+    this.productService.searchEvent.subscribe(
+      params => this.products = this.productService.search(params)
+    )
   }
 }
